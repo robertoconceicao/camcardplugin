@@ -1,0 +1,36 @@
+{
+  "name": "cordova-plugin-camcardplugin",
+  "version": "0.0.1",
+  "description": "Um Android Cordova plugin que conecta uma app com o sdk da CamCard.",
+  "cordova": {
+    "id": "cordova-plugin-camcardplugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanidesis/toastyplugin.git"
+  },
+  "keywords": [
+    "CamCard",
+    "Notification",
+    "Scanner",
+    "Alert",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Roberto da Conceicao <conceicao.roberto@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/stanidesis/toastyplugin/issues"
+  },
+  "homepage": "https://github.com/stanidesis/toastyplugin/"
+}
+
