@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-camcardplugin" version="0.0.1">
-    <name>CamCardPlugin</name>
+        id="camcard-cordova-plugin" 
+        version="0.0.1">
+    <name>CamcardPlugin</name>
 
     <description>Um Android Cordova plugin que conecta uma app com o sdk da CamCard.</description>
     <license>MIT</license>
 
     <keywords>cordova,android,camcard,scanner</keywords>
-    <repo>https://github.com/stanidesis/toastyplugin/Toast-PhoneGap-Plugin.git</repo>
-    <issue>https://github.com/stanidesis/toastyplugin/issues</issue>
+    <repo>https://github.com/robertoconceicao/camcardplugin.git</repo>
+    <issue>https://github.com/robertoconceicao/camcardplugin/issues</issue>
   
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
   
     <js-module src="www/camcardplugin.js" name="camcardPlugin">
-        <clobbers target="window.plugins.camcardPlugin" />
+        <!--<clobbers target="window.plugins.camcardPlugin" /> -->
+        <!-- Para acessar o plugin utiliza window.CamcardPlugin -->
+        <clobbers target="CamcardPlugin" />
     </js-module>
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="CamcardPlugin">
                 <param name="android-package" value="com.conceicao.cordova.plugin.CamcardPlugin"/>
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 

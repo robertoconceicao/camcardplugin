@@ -5,20 +5,34 @@ import android.widget.Toast;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
+import org.apache.cordova.CordovaInterface;
+import org.apache.cordova.CordovaWebView;
+import org.apache.cordova.LOG;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import java.util.Date;
 
 public class CamcardPlugin extends CordovaPlugin {
+  private static final String TAG = "CamcardPlugin";
   private static final String DURATION_LONG = "long";
+
+  public void initialize(CordovaInterface cordova, CordovaWebView webView){
+    super.initialize(cordova, webView);
+    Log.d(TAG, "Initializinf CamcardPlugin");
+  }
+
   @Override
-  public boolean execute(String action, JSONArray args,
-    final CallbackContext callbackContext) {
-      // Verify that the user sent a 'show' action
-      if (!action.equals("show")) {
-        callbackContext.error("\"" + action + "\" não eh uma ação conhecida.");
-        return false;
+  public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
+      if (!action.equals("echo")) {
+        String phrase = args.getString(0);
+        Log.d(TAG, phrase);
+      } else if(action.equals("getDate")) {
+        final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
+        callbackContext.sendPluginResult(result);
       }
+      return true;
+      /*
       String message;
       String duration;
       try {
@@ -38,5 +52,6 @@ public class CamcardPlugin extends CordovaPlugin {
       PluginResult pluginResult = new PluginResult(PluginResult.Status.OK);
       callbackContext.sendPluginResult(pluginResult);
       return true;
+      */
   }
 }
