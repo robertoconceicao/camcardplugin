@@ -19,14 +19,14 @@ public class CamcardPlugin extends CordovaPlugin {
 
   public void initialize(CordovaInterface cordova, CordovaWebView webView){
     super.initialize(cordova, webView);
-    Log.d(TAG, "Initializinf CamcardPlugin");
+    LOG.d(TAG, "Initializinf CamcardPlugin");
   }
 
   @Override
   public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) {
       if (!action.equals("echo")) {
         String phrase = args.getString(0);
-        Log.d(TAG, phrase);
+        LOG.d(TAG, phrase);
       } else if(action.equals("getDate")) {
         final PluginResult result = new PluginResult(PluginResult.Status.OK, (new Date()).toString());
         callbackContext.sendPluginResult(result);

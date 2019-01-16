@@ -16,7 +16,7 @@
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
   
-    <js-module src="www/camcardplugin.js" name="camcardPlugin">
+    <js-module src="www/plugin.js" name="camcardPlugin">
         <!--<clobbers target="window.plugins.camcardPlugin" /> -->
         <!-- Para acessar o plugin utiliza window.CamcardPlugin -->
         <clobbers target="CamcardPlugin" />
